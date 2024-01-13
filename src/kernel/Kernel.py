@@ -16,7 +16,6 @@ def write_file(content):
         wf.write(content)
         wf.close()
 def read_folder():
-    pass
 def write_folder():
     pass
 def delete_folder():
