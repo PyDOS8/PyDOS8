@@ -26,3 +26,9 @@ while True:
     elif cmd == "help":
         for cmds in commands:
             print(cmds)
+    elif == "exit":
+        confirm = input("Are you sure you want to leave? ")
+        if confirm == True:
+            break
+        else:
+            print("Exit aboarded")
