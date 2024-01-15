@@ -12,10 +12,12 @@ def read_file(read_filename):
             print(rf.read(read_filename)) 
             rf.close()   
 def write_file(content):
-    with open("FS", "w") as wf:
+    with open("FS.json", "w") as wf:
         wf.write(content)
         wf.close()
 def read_folder():
+    with open("FS.json", "R") as rf:
+        pass
 def write_folder():
     pass
 def delete_folder():
