@@ -31,6 +31,8 @@ _FDriver:
  je _SetAllPermissionsToOne
 
 _SetAllPermissionsToOne:
+
+  ; Setting File And Folder Permissions to 1
   mov dword [can_write_file], 1
   mov dword [can_read_file], 1
   mov dword [can_delete_file], 1
