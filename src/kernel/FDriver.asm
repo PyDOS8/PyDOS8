@@ -49,3 +49,6 @@ _CheckPermissions:
   
   cmp dword [can_delete_file], 1
   je _checkIfDeletingFile
+
+  cmp dword [can_write_file], 1
+  je _checkIfWritingFile
