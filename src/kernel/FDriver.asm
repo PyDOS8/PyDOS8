@@ -38,7 +38,7 @@ _SetAllPermissionsToOne:
   jmp _FDriver
 
 _CheckPermissions:
-  %include "Kernel.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, `CheckIfDeletingFile`
+  %include "KernelFunctions.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, `CheckIfDeletingFile`
   ; and `checkIfDeletingFile`)
 
   cmp dword [can_read_file], 1
