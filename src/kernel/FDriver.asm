@@ -52,3 +52,15 @@ _CheckPermissions:
   ; Check if we can delete a file
   cmp dword [can_delete_file], 1 
   je _CheckIfDeletingFile ; If we can, goto `CheckIfDeletingFile
+
+  ; Check if we can delete a folder
+  cmp dword [can_delete_folder], 1 
+  je _CheckIfDeletingFolder ; If we can, goto `CheckIfDeletingFolder`
+
+  ; Check if we can write a folder
+  cmp dword [can_write_folder], 1
+  je _CheckIfWritingFolder ; If we can, goto `CheckIfWritingFolder`
+
+ ; Check if we can read a folder
+ cmp dword [can_read_folder], 1
+ je _CheckIfReadingFolder  ; If we can, goto `CheckIfReadingFolder`
