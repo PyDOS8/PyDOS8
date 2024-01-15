@@ -41,14 +41,14 @@ _CheckPermissions:
   %include "KernelFunctions.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, `CheckIfDeletingFile`
   ; and `checkIfDeletingFile`)
 
+  ; Check if we can read a file
   cmp dword [can_read_file], 1
-  je _CheckIfReadingFile
-  
-  cmp dword [can_write_file], 1
-  je _CheckIfWritingFile
-  
-  cmp dword [can_delete_file], 1
-  je _checkIfDeletingFile
+  je _CheckIfReadingFile ; If we can, goto `CheckIfReadingFile`
 
+  ; Check if we can write a file
   cmp dword [can_write_file], 1
-  je _checkIfWritingFile
+  je _CheckIfWritingFile ; If we can, goto `CheckIfWritingFile`
+
+  ; Check if we can delete a file
+  cmp dword [can_delete_file], 1 
+  je _CheckIfDeletingFile ; If we can, goto `CheckIfDeletingFile
