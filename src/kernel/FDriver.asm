@@ -35,7 +35,7 @@ _SetAllPermissionsToOne:
   mov dword [can_read_file], 1
   mov dword [can_delete_file], 1
   
-   jmp _FDriver
+  jmp _FDriver
 
 _CheckPermissions:
   %include "Kernel.asm" ; Include Kernel (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, `CheckIfDeletingFile`
