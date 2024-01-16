@@ -2,6 +2,7 @@ section .text
  global _FDriver
  global _SetAllPermissionsToOne
  global _CheckPermissions
+ global _SetWriteFileToTrue
 section .data
   ; File Handling And Permissions
   file_permissions: dd 4
@@ -29,7 +30,8 @@ _FDriver:
  ; Checking if `file_permissions` variable is set to 4 (EG. All)
  cmp dword [file_permissions], 4
  je _SetAllPermissionsToOne
-
+ cmp dword [file_permissions], 3
+ je _SetWriteFileToTrue
 _SetAllPermissionsToOne:
 
   ; Setting File And Folder Permissions to 1
@@ -68,3 +70,7 @@ _CheckPermissions:
  ; Check if we can read a folder
  cmp dword [can_read_folder], 1
  je _CheckIfReadingFolder  ; If we can, goto `CheckIfReadingFolder`
+
+; Set `write_file` to 1
+_SetCanWriteFileToTrue:
+  mov dword [WriteFile], 1
