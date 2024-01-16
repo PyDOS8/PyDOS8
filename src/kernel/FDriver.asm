@@ -8,7 +8,9 @@ section .text
  global _SetReadFolderToTrue
  global _SetWriteFolderToTrue
  global _SetDeleteFolderToTrue
+
 section .data
+
   ; File Handling And Permissions
   file_permissions: dd 4
   can_read_file: dd 0
@@ -49,8 +51,8 @@ _SetAllPermissionsToOne:
   jmp _FDriver
 
 _CheckPermissions:
-  %include "KernelFunctions.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, `CheckIfDeletingFile`
-  ; and `checkIfDeletingFile`)
+  %include "KernelFunctions.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, 
+  ; `CheckIfDeletingFile` and `checkIfDeletingFile`)
 
   ; Check if we can read a file
   cmp dword [can_read_file], 1
