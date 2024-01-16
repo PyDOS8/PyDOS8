@@ -3,6 +3,11 @@ section .text
  global _SetAllPermissionsToOne
  global _CheckPermissions
  global _SetWriteFileToTrue
+ global _SetReadFileToTrue
+ global _SetDeleteFileToTrue
+ global _SetReadFolderToTrue
+ global _SetWriteFolderToTrue
+ global _SetDeleteFolderToTrue
 section .data
   ; File Handling And Permissions
   file_permissions: dd 4
@@ -73,4 +78,24 @@ _CheckPermissions:
 
 ; Set `write_file` to 1
 _SetCanWriteFileToTrue:
-  mov dword [WriteFile], 1
+  mov dword [can_write_file], 1
+
+; Set `read_file` to 1
+_SetReadFileToTrue:
+  mov dword [can_read_file], 1
+
+; Set `delete_file` to 1
+_SetDeleteFileToTrue:
+ mov dword [can_delete_file], 1
+
+; Set `write_folder` to 1
+_SetWriteFolderToTrue:
+  mov dword [can_write_folder], 1
+
+; Set `delete_folder` to 1
+_SetDeleteFolderToTrue:
+  mov dword [can_delete_folder], 1
+
+; Set `read_folder` to 1
+_SetReadFolderToTrue:
+  mov dword [can_read_folder], 1
