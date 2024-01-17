@@ -109,16 +109,16 @@ _SetDeleteFolderToTrue:
 
 ; Set `read_folder` to 1
 _SetReadFolderToTrue:
-  mov dword [can_read_folder], 1 ; This means we can read a folde
+  mov dword [can_read_folder], 1 ; This means we can read a folder
 
 ; Set all file permissions to 1
 _SetAllFilePermissionsToTrue:
-  mov dword [can_write_file], 1
-  mov dword [can_read_file], 1
-  mov dword [can_delete_file], 1
+  mov dword [can_write_file], 1  ; This means we can write a file
+  mov dword [can_read_file], 1   ; This means we can read a file
+  mov dword [can_delete_file], 1 ; This means we can delete a file
 
 ; Set all folder permissions to 1
-_SetAllFolderPermissionsToTrue:
-  mov dword [can_write_folder], 1
-  mov dword [can_delete_folder], 1
-  mov dword [can_read_folder], 1
+_SetAllFolderPermissionsToTrue:  
+  mov dword [can_write_folder], 1  ; This means we can write a folder
+  mov dword [can_delete_folder], 1 ; This means we can delete a folder
+  mov dword [can_read_folder], 1   ; This means we can read a folder
