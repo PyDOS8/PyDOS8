@@ -45,13 +45,13 @@ _FDriver:
 
  ; Checking if `file_permissions` variable is set to 4 (EG. All)
  cmp dword [file_permissions], 4
- je _SetAllPermissionsToOne
+ je _SetAllPermissionsToOne 
  cmp dword [file_permissions], 3
  je _SetWriteFileToTrue
 _SetAllPermissionsToOne:
 
   ; Setting File And Folder Permissions to 1
-  mov dword [can_write_file], 1
+  mov dword [can_write_file], 1 
   mov dword [can_read_file], 1
   mov dword [can_delete_file], 1
   mov dword [can_delete_folder], 1
