@@ -8,6 +8,8 @@ section .text
  global _SetReadFolderToTrue
  global _SetWriteFolderToTrue
  global _SetDeleteFolderToTrue
+ global _SetAllFolderPermissionsToTrue
+ global _SetAllFilePermissionsToTrue
 
 section .data
 
@@ -100,4 +102,16 @@ _SetDeleteFolderToTrue:
 
 ; Set `read_folder` to 1
 _SetReadFolderToTrue:
+  mov dword [can_read_folder], 1
+
+; Set all file permissions to 1
+_SetAllFilePermissionsToTrue:
+  mov dword [can_write_file], 1
+  mov dword [can_read_file], 1
+  mov dword [can_delete_file], 1
+
+; Set all folder permissions to 1
+_SetAllFolderPermissionsToTrue:
+  mov dword [can_write_folder], 1
+  mov dword [can_delete_folder], 1
   mov dword [can_read_folder], 1
