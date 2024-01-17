@@ -1,4 +1,4 @@
-%macro loadIntoMemory 4
+%macro loadOntoStack 4
   push %1
   push %2
   push %3
