@@ -15,6 +15,7 @@ section .text
  global _SetDeleteFolderToTrue
  global _SetAllFolderPermissionsToTrue
  global _SetAllFilePermissionsToTrue
+ global _CompareFilePermissions
 
 section .data
 
