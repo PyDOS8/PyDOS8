@@ -1,9 +1,7 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;                             X86 Assembly                                                                                                                                                        ;
-;    (NOTE: When variables are set to Zero it means false in this codebase)                                                                                                                       ;
-;    (LAST NOTE: The `file_permissions` variable works like this were 0 means none, 4 means all, 3 means we can write a file/folder, 2 means we can read a file/folder, 1 means we can delete a   ;
-;  file/folder)                                                                                                                                                                                   ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;                             X86 Assembly                                                                                                                                                        
+;    (NOTE: When variables are set to Zero it means false in this codebase)                                                                                                               
+;    (LAST NOTE: The `file_permissions` variable works like this were 0 means none, 4 means all, 3 means we can write a file/folder, 2 means we can read a file/folder, 1 means we can delete a   
+;  file/folder)                                                                                                                                                                                   
 
 section .text
  global _FDriver
@@ -38,6 +36,7 @@ section .data
   writing_folder: dd 0
   reading_folder: dd 0
 
+; This function is where all of the main driver stuff like file permission checking is handled
 _FDriver:
 
 ; File Permissions
@@ -61,8 +60,12 @@ _SetAllPermissionsToOne:
   jmp _FDriver
 
 _CheckPermissions:
+  ; The `KernelFunctions.asm` file will handle all of the Kernel's functionality such as deleting a file or folder.
   %include "KernelFunctions.asm" ; Include Kernel functions (eg. `CheckIfReadingFile`, `CheckIfWritingFile`, 
   ; `CheckIfDeletingFile` and `checkIfDeletingFile`)
+  ; The `CheckIfWritingFile` function will check if the user is trying to write a file and handle what to do if that happens
+  ; The 'CheckIfReadingFile` function will check if the user is trying to read a file and handle what to do if that happens
+  ; The `CheckIfDeletingFile` function will check if the user is trying to delete a file and handle what to do if that happens
 
   ; Check if we can read a file
   cmp dword [can_read_file], 1
@@ -70,7 +73,7 @@ _CheckPermissions:
 
   ; Check if we can write a file
   cmp dword [can_write_file], 1
-  je _CheckIfWritingFile ; If we can, goto `CheckIfWritingFile`
+  je _CheckIfWritingFile ; If we can, goto `CheckIfWritingFile
 
   ; Check if we can delete a file
   cmp dword [can_delete_file], 1 
