@@ -1,7 +1,7 @@
 ;                             X86 Assembly                                                                                                                                                        
 ;    (NOTE: When variables are set to Zero it means false in this codebase)                                                                                                               
-;    (LAST NOTE: The `file_permissions` variable works like this were 0 means none, 4 means all, 3 means we can write a file/folder, 2 means we can read a file/folder and 1 means we can delete a   
-;  file/folder)                                                                                                                                                                                   
+;    (LAST NOTE: The `file_permissions` variable works like this were 0 means none, 4 means all, 3 means
+;     we can write a file/folder, 2 means we can read a file/folder and 1 means we can delete a file/folder)                                                                                                                                                                                   
 
 section .text
  global _FDriver
