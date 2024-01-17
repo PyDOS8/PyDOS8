@@ -82,6 +82,7 @@ _CheckPermissions:
   je _CheckIfDeletingFile ; If we can, goto `CheckIfDeletingFile
 
   ; Checking folder permissions
+
   ; Check if we can delete a folder
   cmp dword [can_delete_folder], 1 
   je _CheckIfDeletingFolder ; If we can, goto `CheckIfDeletingFolder`
