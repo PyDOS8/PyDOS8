@@ -1,3 +1,5 @@
+; This file handles all of the allocation and deallocation using the stack 
+
 %macro loadOntoStack 4
   push %1
   push %2
