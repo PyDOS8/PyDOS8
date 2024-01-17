@@ -7,8 +7,10 @@ section .text
  global _CheckIfReadingFile   ;  This function will check if a file has been requested to be read.
  global _DeleteFile           ;  This function will delete a file.
  global _ReadFile             ;  This function will read a file.
+
 section .data
- 
+ ; Nothing here yet...
+
 _CheckIfWritingFile:
     ; The rest of the code here... Because I am dumb...
 
