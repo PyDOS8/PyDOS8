@@ -34,6 +34,7 @@ section .data
 _FDriver:
 
 ; File Permissions
+
 ; Checking file permission settings
 
  ; Checking if `file_permissions` variable is set to 4 (EG. All)
@@ -68,6 +69,7 @@ _CheckPermissions:
   cmp dword [can_delete_file], 1 
   je _CheckIfDeletingFile ; If we can, goto `CheckIfDeletingFile
 
+  ; Checking folder permissions
   ; Check if we can delete a folder
   cmp dword [can_delete_folder], 1 
   je _CheckIfDeletingFolder ; If we can, goto `CheckIfDeletingFolder`
@@ -82,27 +84,27 @@ _CheckPermissions:
 
 ; Set `write_file` to 1
 _SetCanWriteFileToTrue:
-  mov dword [can_write_file], 1
+  mov dword [can_write_file], 1 ; This means we can write a file
 
 ; Set `read_file` to 1
 _SetReadFileToTrue:
-  mov dword [can_read_file], 1
+  mov dword [can_read_file], 1 ; This means we can read a file
 
 ; Set `delete_file` to 1
 _SetDeleteFileToTrue:
- mov dword [can_delete_file], 1
+ mov dword [can_delete_file], 1 ; This means we can delete a file
 
 ; Set `write_folder` to 1
 _SetWriteFolderToTrue:
-  mov dword [can_write_folder], 1
+  mov dword [can_write_folder], 1 ; This means we can write a folder
 
 ; Set `delete_folder` to 1
 _SetDeleteFolderToTrue:
-  mov dword [can_delete_folder], 1
+  mov dword [can_delete_folder], 1 ; This means we can delete a folder
 
 ; Set `read_folder` to 1
 _SetReadFolderToTrue:
-  mov dword [can_read_folder], 1
+  mov dword [can_read_folder], 1 ; This means we can read a folde
 
 ; Set all file permissions to 1
 _SetAllFilePermissionsToTrue:
