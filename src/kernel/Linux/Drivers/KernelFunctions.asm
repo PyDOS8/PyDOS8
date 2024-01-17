@@ -10,7 +10,12 @@ _CheckIfWritingFile:
 
 _CheckIfDeletingFile:
   ; I am retarded enough not to know the goddamn system calls
-  jmp _WriteFile
 
 _WriteFile:
   ; The rest of the dumbest code you ever saw because I cannot do any better.
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  PS. I am extremely bad at coding because I have an extremely low IQ, so why don't you write the code? ;
+;  I really suck at Assembly, so I don't even know why I am using it for the virtual drivers.            ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
