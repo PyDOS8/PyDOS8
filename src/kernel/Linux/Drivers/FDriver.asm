@@ -40,9 +40,9 @@ section .data
 ; This function is where all of the main driver stuff like file permission checking is handled
 _FDriver:
 
-; File Permissions
+ ; File Permissions
 
-; Checking file permission settings
+ ; Checking file permission settings
 
  ; Checking if `file_permissions` variable is set to 4 (EG. All)
  cmp dword [file_permissions], 4
