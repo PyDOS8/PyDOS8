@@ -49,16 +49,17 @@ _FDriver:
  je _SetAllPermissionsToOne 
  cmp dword [file_permissions], 3
  je _SetWriteFileToTrue
+
 _SetAllPermissionsToOne:
 
   ; Setting File And Folder Permissions to 1
-  mov dword [can_write_file], 1 
-  mov dword [can_read_file], 1
-  mov dword [can_delete_file], 1
-  mov dword [can_delete_folder], 1
-  mov dword [can_write_folder], 1
-  mov dword [can_read_folder], 1
-  jmp _FDriver
+  mov dword [can_write_file], 1    ; This means we can write a file
+  mov dword [can_read_file], 1     ; This means we can read a file
+  mov dword [can_delete_file], 1   ; This means we can delete a file
+  mov dword [can_delete_folder], 1 ; This means we can delete a folder
+  mov dword [can_write_folder], 1  ; This means we can write a folder
+  mov dword [can_read_folder], 1   ; This means we can read a folder
+  jmp _FDriver                     
 
 _CheckPermissions:
   ; The `KernelFunctions.asm` file will handle all of the Kernel's functionality such as deleting a file or folder.
