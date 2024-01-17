@@ -7,3 +7,10 @@ section .data
  
 _CheckIfWritingFile:
     ; The rest of the code here... Because I am dumb...
+
+_CheckIfDeletingFile:
+  ; I am retarded enough not to know the goddamn system calls
+  jmp _WriteFile
+
+_WriteFile:
+  ; The rest of the dumbest code you ever saw because I cannot do any better.
