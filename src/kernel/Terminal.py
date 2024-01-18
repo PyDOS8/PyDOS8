@@ -6,8 +6,6 @@ while True:
     cmd = input("Enter command: ")
     if cmd == "cls":
         os.system("cls")
-    elif cmd == "exit":
-        exit()
     elif cmd.startswith("print"):
         cmdAsStr = str(cmd[5::])
         print(cmdAsStr)
