@@ -21,6 +21,7 @@ endmacro%
   push %3
   push %4
 endmacro%
+
 %macro deallocate1FromStack 1
   pop %1
 endmacro%
