@@ -13,7 +13,14 @@ endmacro%
   push %1
   push %2
   push %3
+endmacro%
 
+%macro load4OntoStack 4
+  push %1
+  push %2
+  push %3
+  push %4
+endmacro%
 %macro deallocate1FromStack 1
   pop %1
 endmacro%
