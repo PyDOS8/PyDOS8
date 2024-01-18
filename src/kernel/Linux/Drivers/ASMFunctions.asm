@@ -1,4 +1,6 @@
-; This file handles all of the allocation and deallocation using the stack 
+; This file holds all of the macros to simplify NASM development.
+
+; Memory allocation and deallocation
 
 %macro load1OntoStack 1
  push %1
@@ -58,3 +60,47 @@ endmacro%
   pop %3
   pop %4
   pop %5
+endmacro%
+
+
+; General functions
+
+; Moving data around
+%macro move 2
+  mov %1, %2
+endmacro%
+
+; Exiting
+%macro exit 2
+  mov eax, %1
+  xor %2, %2
+endmacro%
+
+; JMP
+%macro goto 1
+  jmp _%1
+endmacro%
+
+; Comparing
+%macro compare 2
+  cmp %1, %2
+endmacro%
+
+; JE
+%macro gotoifequal 1
+ je _%1
+endmacro%
+
+; JL
+%macro gotoifless 1
+  jl _%1
+endmacro%
+
+; JG
+%macro gotoifgreater 1
+  jg _%1
+endmacro%
+
+%macro gotoifequalorgreater 1
+  jge _%1
+endmacro%
