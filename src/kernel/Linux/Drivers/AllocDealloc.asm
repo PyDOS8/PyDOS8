@@ -27,6 +27,7 @@ endmacro%
 %macro deallocate3FromStack 3
   pop %1
   pop %2
+  pop %3
 endmacro%
 
 %macro deallocate4FromStack 4  
