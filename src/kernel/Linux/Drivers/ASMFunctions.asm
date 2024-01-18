@@ -104,3 +104,17 @@ endmacro%
 %macro gotoifequalorgreater 1
   jge _%1
 endmacro%
+
+%macro compare2 2
+
+  ; Compare the first value
+  cmp %1
+  je _CMP2equal
+  jl _CMP2less
+  jg _CMP2greater
+
+  ; Compare the second value
+  cmp %2
+  je _CMP2equal
+  jl _CMP3less
+  jg _CMP3greater
