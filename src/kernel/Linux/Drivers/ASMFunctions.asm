@@ -87,7 +87,7 @@ endmacro%
 endmacro%
 
 ; JE
-%macro gotoifequal 1
+%macro GIFE 1
  je _%1
 endmacro%
 
@@ -97,12 +97,12 @@ endmacro%
 endmacro%
 
 ; JG
-%macro gotoifgreater 1
+%macro GIFG 1
   jg _%1
 endmacro%
 
 ;JGE
-%macro gotoifequalorgreater 1
+%macro GIFEL 1
   jge _%1
 endmacro%
 
@@ -110,5 +110,7 @@ endmacro%
   mov %2, %1
 endmacro%
 
-move eax, ebx ; eax = ebx
-moverl eax, ebx ; ebx = eax
+; JGL
+%macro GIFLG 1
+  jle _%1
+endmacro%
