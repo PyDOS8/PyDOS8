@@ -179,3 +179,7 @@ endmacro%
 %macro subtract 2
   sub %1, %2
 endmacro%
+
+%macro clear 
+  xor %1, %1
+endmacro%
