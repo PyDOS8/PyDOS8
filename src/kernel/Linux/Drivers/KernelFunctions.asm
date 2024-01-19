@@ -12,13 +12,17 @@ section .data
  ; Nothing here yet...
 
 _CheckIfWritingFile:
+    mov eax, 
+
     ; The rest of the code here... Because I am dumb...
 
 _CheckIfDeletingFile:
+  mov eax,
   ; I am retarded enough not to know the goddamn system calls
 
 _WriteFile:
-  ; The rest of the dumbest code you ever saw because I cannot do any better.
+ mov eax, 
+ ; The rest of the dumbest code you ever saw because I cannot do any better.
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
