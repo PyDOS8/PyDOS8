@@ -104,3 +104,10 @@ endmacro%
 %macro gotoifequalorgreater 1
   jge _%1
 endmacro%
+
+%macro moverl 2
+  mov %2, %1
+endmacro%
+
+move eax, ebx ; eax = ebx
+moverl eax, ebx ; ebx = eax
