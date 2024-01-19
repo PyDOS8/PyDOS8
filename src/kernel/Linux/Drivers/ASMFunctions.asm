@@ -101,6 +101,7 @@ endmacro%
   jg _%1
 endmacro%
 
+;JGE
 %macro gotoifequalorgreater 1
   jge _%1
 endmacro%
