@@ -1,4 +1,10 @@
-; This file holds all of the macros to simplify NASM development.
+section .text
+
+global _start
+
+_start:
+
+    ; This file holds all of the macros to simplify NASM development.
 
 ; Memory allocation and deallocation
 
@@ -156,14 +162,14 @@
  jg _%3
 %endmacro
 
-%macro text %1
+%macro text 1
  section .text
   global _%1
 %endmacro
 
 %macro interrupt 1
  int %1
-endmacro%
+%endmacro
 
 %macro multiply 2
   mul %1, %2
@@ -181,6 +187,6 @@ endmacro%
   sub %1, %2
 %endmacro
 
-%macro clear 
+%macro clear 1
   xor %1, %1
-endmacro%
+%endmacro
