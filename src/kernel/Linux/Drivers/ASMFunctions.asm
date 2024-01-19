@@ -159,3 +159,23 @@ endmacro%
  section .text
   global _%1
 endmacro%
+
+%macro interrupt 1
+ int %1
+endmacro%
+
+%macro multiply 2
+  mul %1, %2
+endmacro%
+
+%macro divide 2
+  div %1, %2
+endmacro%
+
+%macro add 2
+ add %1, %2
+endmacro%
+
+%macro subtract 2
+  sub %1, %2
+endmacro%
