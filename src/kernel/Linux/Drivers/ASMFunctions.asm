@@ -32,6 +32,24 @@ endmacro%
   push %5
 endmacro%
 
+%macro load6OntoStack 6
+  push %1
+  push %2
+  push %3
+  push %4
+  push %5
+  push %6
+endmacro%
+
+%macro deallocate6FromStack 6
+ pop %1
+ pop %2
+ pop %3
+ pop %4
+ pop %5
+ pop %6
+endmacro%
+
 %macro deallocate1FromStack 1
   pop %1
 endmacro%
