@@ -1,11 +1,3 @@
-section .text
-
-global _start
-
-_start:
-
-    ; This file holds all of the macros to simplify NASM development.
-
 ; Memory allocation and deallocation
 
 %macro load1OntoStack 1
