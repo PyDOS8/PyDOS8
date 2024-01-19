@@ -132,3 +132,8 @@ endmacro%
 %macro GIFLG 1
   jle _%1
 endmacro%
+
+; JLE
+%macro GIFLE 1
+  jle _%1
+endmacro%
