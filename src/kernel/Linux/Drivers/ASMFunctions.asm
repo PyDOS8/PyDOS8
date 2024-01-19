@@ -137,3 +137,25 @@ endmacro%
 %macro GIFLE 1
   jle _%1
 endmacro%
+
+; For loop
+%macro ForLoopJL 3
+ cmp %1, %2
+ jl _%3
+endmacro%
+
+; For loop 2
+%macro ForLoopJE 3
+ cmp %1, %2
+ je _%3
+
+; For loop 3
+%macro ForLoopJG 3
+ cmp %1, %2
+ jg _%3
+endmacro%
+
+%macro text %1
+ section .text
+  global _%1
+endmacro%
