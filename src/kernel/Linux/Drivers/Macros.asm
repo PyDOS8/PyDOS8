@@ -146,27 +146,27 @@
 
 ; For loop
 %macro ForLoopJL 3
- cmp %1, %2
+ cmp [%1], [%2]
  jl _%3
 %endmacro
 
 ; For loop 2
 %macro ForLoopJE 3
- cmp %1, %2
+ cmp [%1], [%2]
  je _%3
 %endmacro
 
 ; For loop 3
 %macro ForLoopJG 3
- cmp %1, %2
+ cmp [%1], [%2]
  jg _%3
 %endmacro
 
 ; For loop 4
-%macro ForLoopJGE 3
-  cmp %1, %2
-  jge _%3
-endmacro%
+%macro ForLoopJGE 2
+ JGE _%2
+ForLoopJGE 1, exit
+%endmacro
 
 %macro text 1
  section .text
