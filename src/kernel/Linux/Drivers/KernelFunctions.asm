@@ -22,10 +22,20 @@ _WriteFile:
   clear eax
   clear ecx
   deallocate2FromStack eax, ecx 
-_ReadFle
+
+_ReadFile:
   %include "Macros.asm"
   moverl 49, eax
   moverl filename, ecx
+  load2OntoStack eax, ecx
+  clear eax
+  clear ecx
+  deallocate2FromStack eax, ecx
+
+_DeleteFile:
+  %include "Macros.asm"
+  moverl 49, eax
+  moverl 45, ecx 
   load2OntoStack eax, ecx
   clear eax
   clear ecx
