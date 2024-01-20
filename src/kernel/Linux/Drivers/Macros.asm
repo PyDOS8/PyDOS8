@@ -165,7 +165,6 @@
 ; For loop 4
 %macro ForLoopJGE 2
  JGE _%2
-ForLoopJGE 1, exit
 %endmacro
 
 %macro text 1
