@@ -25,10 +25,8 @@ _WriteFile:
 _ReadFle
   %include "Macros.asm"
   moverl 49, eax
-  moverl filename, ecx 
-
+  moverl filename, ecx
   load2OntoStack eax, ecx
   clear eax
   clear ecx
-
   deallocate2FromStack eax, ecx
