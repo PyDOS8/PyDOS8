@@ -162,6 +162,12 @@
  jg _%3
 %endmacro
 
+; For loop 4
+%macro ForLoopJGE 3
+  cmp %1, %2
+  jge _%3
+endmacro%
+
 %macro text 1
  section .text
   global _%1
