@@ -29,6 +29,10 @@ _WriteFile:
  push eax
  push ecx
 
+ ; Clear register's values
+ xor eax, eax
+ xor ecx, ecx 
+
  ; Deallocate the memory
  pop eax
  pop ebx
@@ -38,12 +42,12 @@ _ReadFile:
   mov ecx, filesize
   mov edx, filename
   mov esi, filecontent
-
+ 
   ; Load registers into memory
   push ecx
   push edx
   push esi
-
+ 
   ; Clear registers
   xor ecx, ecx 
   xor edx,edx
