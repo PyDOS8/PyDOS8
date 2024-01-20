@@ -78,6 +78,14 @@
   pop %5
 %endmacro
 
+%macro deallocate6FromStack 6
+  pop %1
+  pop %2
+  pop %3
+  pop %4
+  pop %5
+  pop %6
+%endmacro
 
 ; General functions
 
