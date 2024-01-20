@@ -8,24 +8,49 @@ section .text
  global _DeleteFile           ;  This function will delete a file.
  global _ReadFile             ;  This function will read a file.
 
+section .bss
+  filesize: resb 10 
 section .data
- ; Nothing here yet...
-
-_CheckIfWritingFile:
-    mov eax, 
-
-    ; The rest of the code here... Because I am dumb...
-
+  filename: db "U"
+  filecontent: db "This is the file's content"
+_CheckIfWritingFile
+  mov ecx, filename
+  push ecx
+  
 _CheckIfDeletingFile:
-  mov eax,
-  ; I am retarded enough not to know the goddamn system calls
-
+  mov ecx, filename
+  push ecx
 _WriteFile:
- mov eax, 
- ; The rest of the dumbest code you ever saw because I cannot do any better.
+ ; Load values and variables into registers
+ mov eax, 1
+ mov ecx, filename
 
+ ; Load registers into memory
+ push eax
+ push ecx
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;  PS. I am extremely bad at coding because I have an extremely low IQ, so why don't you write the code? ;
-;  I really suck at Assembly, so I don't even know why I am using it for the virtual drivers.            ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ; Deallocate the memory
+ pop eax
+ pop ebx
+ 
+_ReadFile:
+  ; Load variables into registers
+  mov ecx, filesize
+  mov edx, filename
+  mov esi, filecontent
+
+  ; Load registers into memory
+  push ecx
+  push edx
+  push esi
+
+  ; Clear registers
+  xor ecx, ecx 
+  xor edx,edx
+  xor esi, esi 
+
+  ; Deallocate the stack
+  pop eax
+  pop ecx
+  pop edx
+  pop esi 
