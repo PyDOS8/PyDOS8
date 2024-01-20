@@ -16,8 +16,8 @@ section .data
 
 _WriteFile:
   %include "Macros.asm"
-  move eax, 1
-  move ecx, filename
+  moverl 1, eax
+  moverl filename, ecx 
   load2OntoStack eax, ecx 
   clear eax
   clear ecx
