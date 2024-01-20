@@ -32,6 +32,7 @@ _WriteFile:
  pop ebx
  
 _ReadFile:
+
   ; Load variables into registers
   mov ecx, filesize
   mov edx, filename
