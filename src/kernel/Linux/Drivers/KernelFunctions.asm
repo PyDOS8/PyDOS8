@@ -15,41 +15,9 @@ section .data
   filecontent: db "This is the file's content"
 
 _WriteFile:
- ; Load values and variables into registers
- mov eax, 1
- mov ecx, filename
-
- ; Load registers into memory
- push eax
- push ecx
-
- ; Clear register's values
- xor eax, eax
- xor ecx, ecx 
-
- ; Deallocate the memory
- pop eax
- pop ebx
+  %include "Macros.asm"
+  move eax, 1
+  move ecx, filename
+  load2OntoStack eax, ecx 
+  deallocate2FromStack eax, ecx 
  
-_ReadFile:
-
-  ; Load variables into registers
-  mov ecx, filesize
-  mov edx, filename
-  mov esi, filecontent
- 
-  ; Load registers into memory
-  push ecx
-  push edx
-  push esi
- 
-  ; Clear registers
-  xor ecx, ecx 
-  xor edx,edx
-  xor esi, esi 
-
-  ; Deallocate the stack
-  pop eax
-  pop ecx
-  pop edx
-  pop esi 
