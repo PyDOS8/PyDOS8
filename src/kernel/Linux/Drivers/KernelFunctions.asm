@@ -13,13 +13,7 @@ section .bss
 section .data
   filename: db "U"
   filecontent: db "This is the file's content"
-_CheckIfWritingFile
-  mov ecx, filename
-  push ecx
-  
-_CheckIfDeletingFile:
-  mov ecx, filename
-  push ecx
+
 _WriteFile:
  ; Load values and variables into registers
  mov eax, 1
