@@ -24,9 +24,11 @@ _WriteFile:
   deallocate2FromStack eax, ecx 
 _ReadFle
   %include "Macros.asm"
-  move eax, 49
-  mov ecx, filename
-  load2OntoStack eax, ecx1
+  moverl 49, eax
+  moverl filename, ecx 
+
+  load2OntoStack eax, ecx
   clear eax
   clear ecx
-  
+
+  deallocate2FromStack eax, ecx
