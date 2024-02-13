@@ -15,3 +15,4 @@ My level of experience in each language is:
 * CSS: 70%
 * MySQL: 60%
 * PHP: 60%
+* Python: 90%
