@@ -8,7 +8,8 @@ The languages I use are
 * NASM X86
 * PHP
 * MySQL
-<br/>My level of experience in each language is:
+
+## <br/><br/>My level of experience in each language is:
 * NASM: 50%
 * HTML: 80%
 * JavaScript: 70%
