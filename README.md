@@ -16,3 +16,8 @@ The languages I use are
 * MySQL: 60%
 * PHP: 60%
 * Python: 90%
+
+I am currently learning:
+* PHP and MySQL
+
+I am currently working on a StackOverflow remake.
