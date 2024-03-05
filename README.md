@@ -10,7 +10,7 @@ The languages I use are
 * MySQL
 
 ## <br/><br/>My level of experience in each language is:
-* NASM: 50%
+* NASM: 70%
 * HTML: 80%
 * JavaScript: 70%
 * CSS: 70%
